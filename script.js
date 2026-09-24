@@ -361,3 +361,37 @@ track.addEventListener('click', (e) => {
 window.addEventListener('resize', queueUpdate);
 
 updateCarousel();
+
+const previewOverlay = document.getElementById('previewOverlay');
+const previewFrame = document.getElementById('previewFrame');
+const previewTitle = document.getElementById('previewTitle');
+const closePreviewBtn = document.getElementById('closePreview');
+
+function openPreview(plan, name) {
+    previewTitle.textContent = `Vista previa: ${name}`;
+    previewFrame.src = `vista-previa/index.html?plan=${encodeURIComponent(plan)}`;
+    previewOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closePreview() {
+    previewOverlay.classList.remove('active');
+    previewFrame.src = 'about:blank';
+    document.body.style.overflow = 'auto';
+}
+
+document.querySelectorAll('.preview-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        openPreview(btn.dataset.plan, btn.closest('.card').querySelector('h3').textContent);
+    });
+});
+
+closePreviewBtn.addEventListener('click', closePreview);
+
+previewOverlay.addEventListener('click', (e) => {
+    if (e.target === previewOverlay) closePreview();
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && previewOverlay.classList.contains('active')) closePreview();
+});
