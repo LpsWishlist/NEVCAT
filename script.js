@@ -427,6 +427,7 @@ document.querySelectorAll('.faq-question').forEach(question => {
             if (item !== faqItem && item.classList.contains('open')) {
                 item.classList.remove('open');
                 item.querySelector('.faq-answer').classList.remove('open');
+                item.querySelector('.faq-answer').style.display = 'none';
             }
         });
         
@@ -434,9 +435,18 @@ document.querySelectorAll('.faq-question').forEach(question => {
         if (isOpen) {
             faqItem.classList.remove('open');
             answer.classList.remove('open');
+            answer.style.display = 'none';
         } else {
             faqItem.classList.add('open');
             answer.classList.add('open');
+            answer.style.display = 'block';
         }
     });
 });
+
+// Easter egg: Logo clickeable
+document.querySelector('.logo').addEventListener('click', () => {
+    window.open('https://youtu.be/i2yiO4D0CU8?si=fNzQDKEonF2J9UUg', '_blank');
+});
+document.querySelector('.logo').style.cursor = 'pointer';
+
