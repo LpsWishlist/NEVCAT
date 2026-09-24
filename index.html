@@ -21,12 +21,17 @@
     </header>
 
     <section class="welcome-section">
-        <img src="images/port-01.jpg" alt="Bienvenida" class="welcome-image">
+        <img src="images/imagen-bienvenida.jpg" alt="Bienvenida" class="welcome-image">
     </section>
 
     <section class="products-section">
         <h2 class="main-title">Nuestras Páginas Web</h2>
         <p class="subtitle">Elige la que más te ame</p>
+        <div class="scroll-hint-banner">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+            <span>Desliza para ver más opciones</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+        </div>
 
         <div class="scroll-container">
                 <button class="scroll-arrow scroll-prev" id="scrollPrev" aria-label="Anterior" disabled>
@@ -47,6 +52,7 @@
                                 <li>OTROS</li>
                                 <li class="highlight">30 espacios LPS</li>
                             </ul>
+                            <button type="button" class="preview-btn" data-plan="estandar">VISUALIZAR LA PÁGINA</button>
                             <div class="card-footer">
                                 <span class="price">$6.000</span>
                                 <button class="buy-btn" data-id="estandar" data-name="Página Wishlist Estándar" data-price="6000">Agregar</button>
@@ -66,6 +72,7 @@
                                 <li>SE PERMUTA</li>
                                 <li class="highlight">50 espacios LPS</li>
                             </ul>
+                            <button type="button" class="preview-btn" data-plan="vista">VISUALIZAR LA PÁGINA</button>
                             <div class="card-footer">
                                 <span class="price">$7.000</span>
                                 <button class="buy-btn" data-id="vista" data-name="Página Wishlist Vista" data-price="7000">Agregar</button>
@@ -88,6 +95,7 @@
                                 <li class="highlight">5 espacios de fotos</li>
                                 <li class="highlight">Mantenimiento 2 semanas</li>
                             </ul>
+                            <button type="button" class="preview-btn" data-plan="conocedora">VISUALIZAR LA PÁGINA</button>
                             <div class="card-footer">
                                 <span class="price">$8.000</span>
                                 <button class="buy-btn" data-id="conocedora" data-name="Página Wishlist Conocedora" data-price="8000">Agregar</button>
@@ -110,6 +118,7 @@
                                 <li class="highlight">45 espacios LPS</li>
                                 <li class="highlight">3 espacios de fotos</li>
                             </ul>
+                            <button type="button" class="preview-btn" data-plan="nev">VISUALIZAR LA PÁGINA</button>
                             <div class="card-footer">
                                 <span class="price">$7.500</span>
                                 <button class="buy-btn" data-id="nev" data-name="Página Wishlist Nev" data-price="7500">Agregar</button>
@@ -137,6 +146,7 @@
                                     <img src="images/lps-precio-2.jpg" alt="LPS 2">
                                 </div>
                             </div>
+                            <button type="button" class="preview-btn" data-plan="cat">VISUALIZAR LA PÁGINA</button>
                             <div class="card-footer">
                                 <button class="buy-btn" data-id="cat" data-name="Página Wishlist Cat" data-price="LPS">Agregar</button>
                             </div>
@@ -144,10 +154,6 @@
                     </div>
 
                 </div>
-            </div>
-
-            <div class="scroll-hint-banner">
-               Desliza para ver más opciones
             </div>
     </section>
 
@@ -180,6 +186,16 @@
     <section class="final-section">
         <img src="images/imagen-final.jpg" alt="Gracias" class="final-image">
     </section>
+
+    <div class="preview-overlay" id="previewOverlay">
+        <div class="preview-modal" role="dialog" aria-modal="true" aria-labelledby="previewTitle">
+            <div class="preview-header">
+                <h2 id="previewTitle">Vista previa</h2>
+                <button class="close-btn" id="closePreview" aria-label="Cerrar vista previa">✕</button>
+            </div>
+            <iframe class="preview-frame" id="previewFrame" title="Vista previa de la página"></iframe>
+        </div>
+    </div>
 
     <div class="cart-overlay" id="cartOverlay"></div>
     <div class="cart-panel" id="cartPanel">
