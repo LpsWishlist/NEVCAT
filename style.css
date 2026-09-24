@@ -1,7 +1,3 @@
-/* =============================================
-   VARIABLES Y RESET
-   ============================================= */
-
 :root {
     --rose: #F5A9C1;
     --rose-light: #FDD7E4;
@@ -29,10 +25,6 @@ body {
     line-height: 1.6;
     min-height: 100vh;
 }
-
-/* =============================================
-   HEADER
-   ============================================= */
 
 .header {
     background: linear-gradient(135deg, var(--rose-light) 0%, var(--rose-lighter) 100%);
@@ -109,10 +101,6 @@ body {
     font-weight: 700;
 }
 
-/* =============================================
-   IMAGEN BIENVENIDA
-   ============================================= */
-
 .welcome-section {
     padding: 40px 20px;
     text-align: center;
@@ -127,10 +115,6 @@ body {
     display: block;
     margin: 0 auto;
 }
-
-/* =============================================
-   SECCIÓN DE PRODUCTOS
-   ============================================= */
 
 .products-section {
     padding: 50px 20px;
@@ -187,10 +171,6 @@ body {
     background: var(--rose);
 }
 
-/* =============================================
-   TARJETAS DE PRODUCTOS
-   ============================================= */
-
 .product-item {
     flex: 0 0 280px;
     position: relative;
@@ -225,11 +205,6 @@ body {
     color: var(--text);
     margin-bottom: 8px;
     font-weight: 700;
-}
-
-.card-emoji {
-    font-size: 32px;
-    margin-top: 10px;
 }
 
 .features {
@@ -294,8 +269,6 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 6px 18px rgba(245, 169, 193, 0.4);
 }
-
-/* TARJETAS ESPECIALES */
 
 .special-nev .card-special {
     background: linear-gradient(135deg, var(--white), var(--rose-lighter));
@@ -367,8 +340,6 @@ body {
     font-weight: 700;
 }
 
-/* AVISO DE SCROLL */
-
 .scroll-hint-banner {
     text-align: center;
     padding: 20px;
@@ -382,10 +353,6 @@ body {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-5px); }
 }
-
-/* =============================================
-   SECCIÓN DE INFORMACIÓN
-   ============================================= */
 
 .info-section {
     background: var(--rose-lighter);
@@ -424,12 +391,6 @@ body {
     box-shadow: 0 10px 30px rgba(245, 169, 193, 0.2);
 }
 
-.info-icon {
-    display: block;
-    font-size: 40px;
-    margin-bottom: 15px;
-}
-
 .info-card h3 {
     font-size: 18px;
     color: var(--text);
@@ -442,10 +403,6 @@ body {
     color: var(--text-light);
     line-height: 1.5;
 }
-
-/* =============================================
-   IMAGEN FINAL
-   ============================================= */
 
 .final-section {
     padding: 40px 20px;
@@ -461,10 +418,6 @@ body {
     display: block;
     margin: 0 auto;
 }
-
-/* =============================================
-   CARRITO MODAL
-   ============================================= */
 
 .cart-overlay {
     position: fixed;
@@ -628,27 +581,23 @@ body {
     box-shadow: 0 8px 25px rgba(245, 169, 193, 0.4);
 }
 
-/* =============================================
-   RESPONSIVE DESIGN
-   ============================================= */
-
 @media (max-width: 768px) {
     .logo {
         font-size: 24px;
     }
-    
+
     .main-title {
         font-size: 28px;
     }
-    
+
     .product-item {
         flex: 0 0 250px;
     }
-    
+
     .cart-panel {
         max-width: 100%;
     }
-    
+
     .info-grid {
         grid-template-columns: 1fr;
     }
@@ -658,79 +607,226 @@ body {
     .header-inner {
         padding: 0 15px;
     }
-    
+
     .logo {
         font-size: 20px;
     }
-    
+
     .tagline {
         font-size: 12px;
     }
-    
+
     .main-title {
         font-size: 24px;
     }
-    
+
     .subtitle {
         font-size: 14px;
     }
-    
+
     .product-item {
         flex: 0 0 220px;
     }
-    
+
     .card {
         padding: 20px;
     }
-    
+
     .card-header h3 {
         font-size: 18px;
     }
-    
-    .card-emoji {
-        font-size: 28px;
-    }
-    
+
     .features {
         gap: 8px;
         margin-bottom: 15px;
     }
-    
+
     .features li {
         font-size: 12px;
         padding: 6px 10px;
     }
-    
+
     .card-footer {
         flex-direction: column;
         gap: 10px;
         padding-top: 15px;
     }
-    
+
     .price {
         font-size: 18px;
     }
-    
+
     .buy-btn {
         width: 100%;
         padding: 10px;
         font-size: 12px;
     }
-    
+
     .scroll-hint-banner {
         font-size: 12px;
         padding: 15px;
     }
-    
+
     .info-title {
         font-size: 24px;
     }
-    
-    .info-icon {
-        font-size: 32px;
-    }
-    
+
     .info-card h3 {
         font-size: 16px;
+    }
+}
+
+.cart-btn svg,
+.scroll-arrow svg {
+    fill: none;
+    stroke: var(--text);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.cart-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+.products-grid {
+    position: relative;
+    scroll-snap-type: x proximity;
+    overscroll-behavior-x: contain;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.products-grid.is-dragging {
+    cursor: grabbing;
+}
+
+.products-grid.is-moving {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+
+.product-item {
+    scroll-snap-align: start;
+    transform: scale(calc(0.94 + 0.06 * var(--visible, 1)));
+    opacity: calc(0.55 + 0.45 * var(--visible, 1));
+    will-change: transform, opacity;
+}
+
+.scroll-arrow {
+    position: absolute;
+    top: 50%;
+    width: 46px;
+    height: 46px;
+    margin-top: -23px;
+    border-radius: 50%;
+    border: 2px solid var(--rose);
+    background: var(--white);
+    box-shadow: 0 6px 18px rgba(245, 169, 193, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 20;
+    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scroll-arrow svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2.5;
+}
+
+.scroll-prev {
+    left: -14px;
+}
+
+.scroll-next {
+    right: -14px;
+}
+
+.scroll-arrow:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 22px rgba(245, 169, 193, 0.45);
+}
+
+.scroll-arrow:disabled {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.special-nev .card-special,
+.special-cat .card-cat {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.badge {
+    overflow: hidden;
+}
+
+.special-nev .card-special::after,
+.special-cat .card-cat::after,
+.special-nev .badge::after,
+.special-cat .badge::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(245, 169, 193, 0) 0%,
+        rgba(245, 169, 193, 0.25) 24%,
+        rgba(255, 255, 255, 0.9) 38%,
+        rgba(245, 169, 193, 0.25) 50%,
+        rgba(245, 169, 193, 0) 56%,
+        rgba(255, 255, 255, 0) 60%,
+        rgba(255, 255, 255, 0.95) 66%,
+        rgba(255, 255, 255, 0) 72%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: translateX(-190%) skewX(-22deg);
+    animation: mirror-sweep 4.5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.special-nev .badge::after {
+    animation-delay: 0.25s;
+}
+
+.special-cat .card-cat::after {
+    animation-delay: 1.6s;
+}
+
+.special-cat .badge::after {
+    animation-delay: 1.85s;
+}
+
+@keyframes mirror-sweep {
+    0% { transform: translateX(-190%) skewX(-22deg); }
+    45%, 100% { transform: translateX(320%) skewX(-22deg); }
+}
+
+@media (hover: none) {
+    .scroll-arrow {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .products-grid {
+        scroll-behavior: auto;
+    }
+
+    .special-nev .card-special::after,
+    .special-cat .card-cat::after,
+    .special-nev .badge::after,
+    .special-cat .badge::after {
+        animation: none;
     }
 }
