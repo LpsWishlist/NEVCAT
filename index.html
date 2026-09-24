@@ -7,137 +7,130 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- HEADER -->
     <header class="header">
         <div class="header-inner">
             <div class="logo-section">
-                <h1 class="logo">✨ NevCat</h1>
+                <h1 class="logo">NevCat</h1>
                 <p class="tagline">Páginas Web Hermosas</p>
             </div>
-            <button class="cart-btn" id="cartBtn">
-                🛍️
+            <button class="cart-btn" id="cartBtn" aria-label="Abrir carrito">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12l1 13H5L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
                 <span class="cart-badge" id="cartCount">0</span>
             </button>
         </div>
     </header>
 
-    <!-- IMAGEN DE BIENVENIDA -->
     <section class="welcome-section">
         <img src="images/imagen-bienvenida.jpg" alt="Bienvenida" class="welcome-image">
     </section>
 
-    <!-- SECCIÓN DE PRODUCTOS -->
     <section class="products-section">
-        <h2 class="main-title">Nuestras Páginas Web 💖</h2>
+        <h2 class="main-title">Nuestras Páginas Web</h2>
         <p class="subtitle">Elige la que más te ame</p>
-        
+
         <div class="scroll-container">
+                <button class="scroll-arrow scroll-prev" id="scrollPrev" aria-label="Anterior" disabled>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+                </button>
+                <button class="scroll-arrow scroll-next" id="scrollNext" aria-label="Siguiente">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+                </button>
             <div class="products-grid" id="productsScroll">
-                    <!-- PRODUCTO 1: Wishlist Estándar -->
                     <div class="product-item" data-product="estandar">
                         <div class="card">
                             <div class="card-header">
                                 <h3>Wishlist Estándar</h3>
-                                <p class="card-emoji">🌸</p>
                             </div>
                             <ul class="features">
-                                <li>✨ LPS</li>
-                                <li>✨ ACCESORIOS</li>
-                                <li>✨ OTROS</li>
-                                <li class="highlight">💫 30 espacios LPS</li>
+                                <li>LPS</li>
+                                <li>ACCESORIOS</li>
+                                <li>OTROS</li>
+                                <li class="highlight">30 espacios LPS</li>
                             </ul>
                             <div class="card-footer">
                                 <span class="price">$6.000</span>
-                                <button class="buy-btn" data-id="estandar" data-name="Página Wishlist Estándar" data-price="6000">Agregar 💕</button>
+                                <button class="buy-btn" data-id="estandar" data-name="Página Wishlist Estándar" data-price="6000">Agregar</button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- PRODUCTO 2: Wishlist Vista -->
                     <div class="product-item" data-product="vista">
                         <div class="card">
                             <div class="card-header">
                                 <h3>Wishlist Vista</h3>
-                                <p class="card-emoji">🎀</p>
                             </div>
                             <ul class="features">
-                                <li>✨ LPS</li>
-                                <li>✨ ACCESORIOS</li>
-                                <li>✨ OTROS</li>
-                                <li>✨ SE PERMUTA</li>
-                                <li class="highlight">💫 50 espacios LPS</li>
+                                <li>LPS</li>
+                                <li>ACCESORIOS</li>
+                                <li>OTROS</li>
+                                <li>SE PERMUTA</li>
+                                <li class="highlight">50 espacios LPS</li>
                             </ul>
                             <div class="card-footer">
                                 <span class="price">$7.000</span>
-                                <button class="buy-btn" data-id="vista" data-name="Página Wishlist Vista" data-price="7000">Agregar 💕</button>
+                                <button class="buy-btn" data-id="vista" data-name="Página Wishlist Vista" data-price="7000">Agregar</button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- PRODUCTO 3: Wishlist Conocedora -->
                     <div class="product-item" data-product="conocedora">
                         <div class="card">
                             <div class="card-header">
                                 <h3>Wishlist Conocedora</h3>
-                                <p class="card-emoji">👑</p>
                             </div>
                             <ul class="features">
-                                <li>✨ LPS</li>
-                                <li>✨ ACCESORIOS</li>
-                                <li>✨ OTROS</li>
-                                <li>✨ SE PERMUTA</li>
-                                <li>✨ FOTOS</li>
-                                <li class="highlight">💫 65 espacios LPS</li>
-                                <li class="highlight">📸 5 espacios de fotos</li>
-                                <li class="highlight">🌺 Mantenimiento 2 semanas</li>
+                                <li>LPS</li>
+                                <li>ACCESORIOS</li>
+                                <li>OTROS</li>
+                                <li>SE PERMUTA</li>
+                                <li>FOTOS</li>
+                                <li class="highlight">65 espacios LPS</li>
+                                <li class="highlight">5 espacios de fotos</li>
+                                <li class="highlight">Mantenimiento 2 semanas</li>
                             </ul>
                             <div class="card-footer">
                                 <span class="price">$8.000</span>
-                                <button class="buy-btn" data-id="conocedora" data-name="Página Wishlist Conocedora" data-price="8000">Agregar 💕</button>
+                                <button class="buy-btn" data-id="conocedora" data-name="Página Wishlist Conocedora" data-price="8000">Agregar</button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- PRODUCTO 4: Wishlist Nev -->
                     <div class="product-item special-nev" data-product="nev">
-                        <span class="badge">✨ OFERTA ✨</span>
+                        <span class="badge">OFERTA</span>
                         <div class="card card-special">
                             <div class="card-header">
                                 <h3>Wishlist Nev</h3>
-                                <p class="card-emoji">💖</p>
                             </div>
                             <ul class="features">
-                                <li>✨ LPS</li>
-                                <li>✨ ACCESORIOS</li>
-                                <li>✨ OTROS</li>
-                                <li>✨ SE PERMUTA</li>
-                                <li>✨ FOTOS</li>
-                                <li class="highlight">💫 45 espacios LPS</li>
-                                <li class="highlight">📸 3 espacios de fotos</li>
+                                <li>LPS</li>
+                                <li>ACCESORIOS</li>
+                                <li>OTROS</li>
+                                <li>SE PERMUTA</li>
+                                <li>FOTOS</li>
+                                <li class="highlight">45 espacios LPS</li>
+                                <li class="highlight">3 espacios de fotos</li>
                             </ul>
                             <div class="card-footer">
                                 <span class="price">$7.500</span>
-                                <button class="buy-btn" data-id="nev" data-name="Página Wishlist Nev" data-price="7500">Agregar 💕</button>
+                                <button class="buy-btn" data-id="nev" data-name="Página Wishlist Nev" data-price="7500">Agregar</button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- PRODUCTO 5: Wishlist Cat -->
                     <div class="product-item special-cat" data-product="cat">
-                        <span class="badge cat-badge">💎 EXCLUSIVA 💎</span>
+                        <span class="badge cat-badge">EXCLUSIVA</span>
                         <div class="card card-cat">
                             <div class="card-header">
                                 <h3>Wishlist Cat</h3>
-                                <p class="card-emoji">🐾</p>
                             </div>
                             <ul class="features">
-                                <li>✨ LPS</li>
-                                <li>✨ ACCESORIOS</li>
-                                <li>✨ OTROS</li>
-                                <li class="highlight">💫 35 espacios LPS</li>
+                                <li>LPS</li>
+                                <li>ACCESORIOS</li>
+                                <li>OTROS</li>
+                                <li class="highlight">35 espacios LPS</li>
                             </ul>
                             <div class="lps-options">
-                                <p class="lps-label">Precio: 1 de estos 2 LPS 💝</p>
+                                <p class="lps-label">Precio: 1 de estos 2 LPS</p>
                                 <div class="lps-images">
                                     <img src="images/lps-precio-1.jpg" alt="LPS 1">
                                     <span>o</span>
@@ -145,7 +138,7 @@
                                 </div>
                             </div>
                             <div class="card-footer">
-                                <button class="buy-btn" data-id="cat" data-name="Página Wishlist Cat" data-price="LPS">Agregar 💕</button>
+                                <button class="buy-btn" data-id="cat" data-name="Página Wishlist Cat" data-price="LPS">Agregar</button>
                             </div>
                         </div>
                     </div>
@@ -154,64 +147,55 @@
             </div>
 
             <div class="scroll-hint-banner">
-                👉 Desliza para ver más opciones 👈
+               Desliza para ver más opciones
             </div>
-        </div>
     </section>
 
-    <!-- SECCIÓN DE INFORMACIÓN -->
     <section class="info-section">
-        <h2 class="info-title">¿Qué significa cada opción? 💡</h2>
+        <h2 class="info-title">¿Qué significa cada opción?</h2>
         <div class="info-grid">
             <div class="info-card">
-                <span class="info-icon">✨</span>
                 <h3>LPS</h3>
                 <p>Aquí la gente podrá ver los LPS que deseas a toda costa.</p>
             </div>
             <div class="info-card">
-                <span class="info-icon">🎀</span>
                 <h3>ACCESORIOS</h3>
                 <p>La gente podrá ver los accesorios que tanto necesitan tus LPS.</p>
             </div>
             <div class="info-card">
-                <span class="info-icon">🎁</span>
                 <h3>OTROS</h3>
                 <p>La gente podrá ver cosas variadas que necesitas, como gorros u objetos.</p>
             </div>
             <div class="info-card">
-                <span class="info-icon">💫</span>
                 <h3>SE PERMUTA</h3>
                 <p>Aquí podrás mostrarle a la gente qué LPS estás permutando.</p>
             </div>
             <div class="info-card">
-                <span class="info-icon">📸</span>
                 <h3>FOTOS</h3>
                 <p>Nada mejor que mostrarle fotos hermosas que tienes de tus LPS.</p>
             </div>
         </div>
     </section>
 
-    <!-- IMAGEN FINAL -->
     <section class="final-section">
         <img src="images/imagen-final.jpg" alt="Gracias" class="final-image">
     </section>
 
-    <!-- CARRITO MODAL -->
     <div class="cart-overlay" id="cartOverlay"></div>
     <div class="cart-panel" id="cartPanel">
         <div class="cart-header">
-            <h2>Tu Carrito 💝</h2>
+            <h2>Tu Carrito</h2>
             <button class="close-btn" id="closeCart">✕</button>
         </div>
         <div class="cart-content" id="cartContent">
-            <p class="empty-msg">Tu carrito está vacío 💔</p>
+            <p class="empty-msg">Tu carrito está vacío</p>
         </div>
         <div class="cart-checkout" id="cartCheckout" style="display: none;">
             <div class="total">
                 <span>Total:</span>
                 <span id="totalPrice">$0</span>
             </div>
-            <button class="checkout-btn" id="checkoutBtn">Comprar por WhatsApp 💚</button>
+            <button class="checkout-btn" id="checkoutBtn">Comprar por WhatsApp</button>
         </div>
     </div>
 
