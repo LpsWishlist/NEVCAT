@@ -395,3 +395,48 @@ previewOverlay.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && previewOverlay.classList.contains('active')) closePreview();
 });
+
+// Funcionalidad para etiqueta de actualización
+document.querySelectorAll('.update-badge').forEach(badge => {
+    badge.addEventListener('click', () => {
+        const infoKey = badge.dataset.info;
+        const descElement = document.getElementById(`desc-${infoKey}`);
+        
+        if (descElement) {
+            const isVisible = descElement.style.display !== 'none';
+            descElement.style.display = isVisible ? 'none' : 'block';
+            
+            if (!isVisible) {
+                descElement.classList.add('open');
+            } else {
+                descElement.classList.remove('open');
+            }
+        }
+    });
+});
+
+// Funcionalidad para FAQ - Acordeón
+document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+        const faqItem = question.closest('.faq-item');
+        const answer = faqItem.querySelector('.faq-answer');
+        const isOpen = faqItem.classList.contains('open');
+        
+        // Cerrar todos los otros items
+        document.querySelectorAll('.faq-item').forEach(item => {
+            if (item !== faqItem && item.classList.contains('open')) {
+                item.classList.remove('open');
+                item.querySelector('.faq-answer').classList.remove('open');
+            }
+        });
+        
+        // Toggle el item actual
+        if (isOpen) {
+            faqItem.classList.remove('open');
+            answer.classList.remove('open');
+        } else {
+            faqItem.classList.add('open');
+            answer.classList.add('open');
+        }
+    });
+});
