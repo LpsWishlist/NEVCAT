@@ -150,6 +150,9 @@ function generateMessage() {
 function sendToWhatsApp() {
     if (cart.length === 0) return;
 
+    const confirmed = confirm('¿Estás seguro de tu elección? Recuerda que el pago se realiza mediante Banco Estado (Cuenta RUT) o Wise.');
+    if (!confirmed) return;
+
     const message = generateMessage();
     const encoded = encodeURIComponent(message);
     const phone = WHATSAPP_PHONE.replace(/\D/g, '');
