@@ -2,3 +2,6 @@
 ![Texto descriptivo](images/out-01.jpg)
 ![Texto descriptivo](images/pre-01.jpg)
 ![Texto descriptivo](images/pre-02.jpg)
+![Texto descriptivo](images/hallo-01.jpg)
+![Texto descriptivo](images/navi-01.jpg)
+![Texto descriptivo](images/norm-01.jpg)
